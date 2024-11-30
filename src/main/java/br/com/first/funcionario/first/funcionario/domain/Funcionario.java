@@ -1,7 +1,6 @@
 package br.com.first.funcionario.first.funcionario.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -16,6 +15,8 @@ import java.util.UUID;
 @Entity
 public class Funcionario {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idFuncionario;
     @NotBlank
     private String nomeCompleto;
@@ -31,9 +32,8 @@ public class Funcionario {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
-    public Funcionario(UUID idFuncionario, String nomeCompleto, String cargo, double salário,
-                       String telefone, String endereco, @NotNull Boolean aceitaTermos) {
-        this.idFuncionario = UUID.randomUUID();
+    public Funcionario(UUID idFuncionario, @NotBlank String nomeCompleto, @NotBlank String cargo, double salário,
+                       @NotBlank String telefone, String endereco, @NotNull Boolean aceitaTermos) {
         this.idFuncionario = idFuncionario;
         this.nomeCompleto = nomeCompleto;
         this.cargo = cargo;
