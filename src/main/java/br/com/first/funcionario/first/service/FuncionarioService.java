@@ -1,4 +1,4 @@
-package br.com.first.funcionario.first.funcionario.application.api.service;
+package br.com.first.funcionario.first.service;
 
 import br.com.first.funcionario.first.funcionario.application.api.FuncionarioRequest;
 import br.com.first.funcionario.first.funcionario.application.api.FuncionarioResponse;
