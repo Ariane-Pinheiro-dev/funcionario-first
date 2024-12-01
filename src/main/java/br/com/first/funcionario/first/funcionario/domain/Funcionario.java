@@ -1,5 +1,6 @@
 package br.com.first.funcionario.first.funcionario.domain;
 
+import br.com.first.funcionario.first.funcionario.application.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -33,15 +34,13 @@ public class Funcionario {
     private LocalDateTime dataHoraDoCadastro;
     private LocalDateTime dataHoraDaUltimaAlteracao;
 
-    public Funcionario(UUID idFuncionario, @NotBlank String nomeCompleto, @NotBlank String cargo, double salário,
-                       @NotBlank String telefone, String endereco, @NotNull Boolean aceitaTermos) {
-        this.idFuncionario = idFuncionario;
-        this.nomeCompleto = nomeCompleto;
-        this.cargo = cargo;
-        this.salário = salário;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.aceitaTermos = aceitaTermos;
+    public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+        this.cargo = funcionarioRequest.getCargo();
+        this.salário = funcionarioRequest.getSalário();
+        this.telefone = funcionarioRequest.getTelefone();
+        this.endereco = funcionarioRequest.getEndereco();
+        this.aceitaTermos = funcionarioRequest.getAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }
