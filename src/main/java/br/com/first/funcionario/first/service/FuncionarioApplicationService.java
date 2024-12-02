@@ -18,9 +18,7 @@ public class FuncionarioApplicationService implements FuncionarioService {
     @Override
     public FuncionarioResponse criaFuncionario(FuncionarioRequest funcionarioRequest) {
         log.info("[inicia] FuncionarioService.criaFuncionario");
-        funcinarioLogger.logNovoFuncionario(funcionarioRequest);
         Funcionario funcionario = funcionarioRepository.salva(new Funcionario(funcionarioRequest));
-        funcionarioTopicoProducer.notificaNovoFucionario(funcionario);
         log.info("[finaliza] FuncionarioService.criaFuncionario");
         return FuncionarioResponse.builder().idFuncionario(funcionario.getIdFuncionario()).build();
     }
