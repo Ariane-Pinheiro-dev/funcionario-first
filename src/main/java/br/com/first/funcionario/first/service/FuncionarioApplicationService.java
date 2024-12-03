@@ -29,7 +29,8 @@ public class FuncionarioApplicationService implements FuncionarioService {
     @Override
     public List<FuncionarioListResponse> buscaTodosFuncionarios() {
         log.info("[inicia] FuncionarioService.buscaTodosFuncionarios");
+        List<Funcionario> funcionarios = funcionarioRepository.buscaTodosFuncionarios();
         log.info("[finaliza] FuncionarioService.buscaTodosFuncionarios");
-        return null;
+        return FuncionarioListResponse.convert(funcionarios);
     }
 }
