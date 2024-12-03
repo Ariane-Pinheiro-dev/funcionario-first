@@ -31,6 +31,6 @@ public class FuncionarioApplicationService implements FuncionarioService {
         log.info("[inicia] FuncionarioService.buscaTodosFuncionarios");
         List<Funcionario> funcionarios = funcionarioRepository.buscaTodosFuncionarios();
         log.info("[finaliza] FuncionarioService.buscaTodosFuncionarios");
-        return FuncionarioListResponse.convert(funcionarios);
+        return FuncionarioListResponse.converte(funcionarios);
     }
 }
