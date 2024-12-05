@@ -1,5 +1,6 @@
 package br.com.funcionario.api;
 
+import br.com.funcionario.domain.Funcionario;
 import lombok.Value;
 
 import java.time.LocalDateTime;
@@ -13,4 +14,12 @@ public class FuncionarioDetalhadoResponse {
     private String telefone;
     private Boolean aceitaTermos;
     private LocalDateTime dataHoraDoCadastro;
+
+    public FuncionarioDetalhadoResponse(Funcionario funcionario) {
+        this.idFuncionario = funcionario.getIdFuncionario();
+        this.nomeCompleto = funcionario.getNomeCompleto();
+        this.telefone = funcionario.getTelefone();
+        this.aceitaTermos = funcionario.getAceitaTermos();
+        this.dataHoraDoCadastro = funcionario.getDataHoraDoCadastro();
+    }
 }

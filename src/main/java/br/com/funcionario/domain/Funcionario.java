@@ -17,7 +17,7 @@ import java.util.UUID;
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    @Column(columnDefinition = "uuid", name = "id", updatable = false, unique = true, nullable = false)
     private UUID idFuncionario;
     @NotBlank
     private String nomeCompleto;
