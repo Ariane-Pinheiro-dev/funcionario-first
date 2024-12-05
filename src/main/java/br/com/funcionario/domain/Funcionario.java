@@ -1,13 +1,12 @@
-package br.com.first.funcionario.first.funcionario.domain;
+package br.com.funcionario.domain;
 
-import br.com.first.funcionario.first.funcionario.application.api.FuncionarioRequest;
+import br.com.funcionario.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

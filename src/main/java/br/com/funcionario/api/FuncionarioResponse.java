@@ -1,4 +1,4 @@
-package br.com.first.funcionario.first.funcionario.application.api;
+package br.com.funcionario.api;
 
 import lombok.Builder;
 import lombok.Value;

@@ -1,6 +1,6 @@
-package br.com.first.funcionario.first.repository;
+package br.com.funcionario.repository;
 
-import br.com.first.funcionario.first.funcionario.domain.Funcionario;
+import br.com.funcionario.domain.Funcionario;
 
 import java.util.List;
 

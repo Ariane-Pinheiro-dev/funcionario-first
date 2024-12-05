@@ -1,6 +1,6 @@
-package br.com.first.funcionario.first.infra;
+package br.com.funcionario.infra;
 
-import br.com.first.funcionario.first.funcionario.domain.Funcionario;
+import br.com.funcionario.domain.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

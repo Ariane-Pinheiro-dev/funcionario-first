@@ -1,11 +1,12 @@
-package br.com.first.funcionario.first.funcionario.application.api;
+package br.com.funcionario.api;
 
-import br.com.first.funcionario.first.service.FuncionarioService;
+import br.com.funcionario.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -24,9 +25,17 @@ public class FuncionarioController implements FuncionarioAPI {
 
     @Override
     public List<FuncionarioListResponse> getTodosFuncionarios() {
-        log.info("[inicia] FucionarioController - getTodosFuncionarios");
+        log.info("[inicia] FuncionarioController - getTodosFuncionarios");
         List<FuncionarioListResponse> funcionarios = funcionarioService.buscaTodosFuncionarios();
-        log.info("[finaliza] FucionarioController - getTodosFuncionarios");
+        log.info("[finaliza] FuncionarioController - getTodosFuncionarios");
         return funcionarios;
+    }
+
+    @Override
+    public FuncionarioDetalhadoResponse getFuncionarioAtravesId(UUID idFuncionario) {
+        log.info("[inicia] FuncionarioController - getFuncionarioAtravesId");
+        log.info("[idFuncionario] {}", idFuncionario);
+        log.info("[finaliza] FuncionarioController - getFuncionarioAtravesId");
+        return null;
     }
 }

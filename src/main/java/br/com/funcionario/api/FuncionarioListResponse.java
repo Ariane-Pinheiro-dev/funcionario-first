@@ -1,7 +1,6 @@
-package br.com.first.funcionario.first.funcionario.application.api;
+package br.com.funcionario.api;
 
-import br.com.first.funcionario.first.funcionario.domain.Funcionario;
-import jakarta.validation.constraints.NotBlank;
+import br.com.funcionario.domain.Funcionario;
 import lombok.Value;
 
 import java.util.List;

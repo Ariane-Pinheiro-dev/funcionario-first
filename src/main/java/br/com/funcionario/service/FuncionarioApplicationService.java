@@ -1,13 +1,12 @@
-package br.com.first.funcionario.first.service;
+package br.com.funcionario.service;
 
-import br.com.first.funcionario.first.funcionario.application.api.FuncionarioListResponse;
-import br.com.first.funcionario.first.funcionario.application.api.FuncionarioRequest;
-import br.com.first.funcionario.first.funcionario.application.api.FuncionarioResponse;
-import br.com.first.funcionario.first.funcionario.domain.Funcionario;
-import br.com.first.funcionario.first.repository.funcionarioRepository;
+import br.com.funcionario.api.FuncionarioListResponse;
+import br.com.funcionario.api.FuncionarioRequest;
+import br.com.funcionario.api.FuncionarioResponse;
+import br.com.funcionario.domain.Funcionario;
+import br.com.funcionario.infra.FuncionarioInfraRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.boot.autoconfigure.pulsar.PulsarProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +15,8 @@ import java.util.List;
 @Log4j2
 @RequiredArgsConstructor
 public class FuncionarioApplicationService implements FuncionarioService {
-    private final br.com.first.funcionario.first.repository.funcionarioRepository funcionarioRepository;
+
+    private final FuncionarioInfraRepository funcionarioRepository;
 
     @Override
     public FuncionarioResponse criaFuncionario(FuncionarioRequest funcionarioRequest) {

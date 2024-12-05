@@ -1,4 +1,4 @@
-package br.com.first.funcionario.first;
+package br.com.funcionario;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

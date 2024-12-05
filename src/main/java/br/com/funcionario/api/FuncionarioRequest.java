@@ -1,4 +1,4 @@
-package br.com.first.funcionario.first.funcionario.application.api;
+package br.com.funcionario.api;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

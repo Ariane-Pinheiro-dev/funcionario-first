@@ -1,7 +1,7 @@
-package br.com.first.funcionario.first.infra;
+package br.com.funcionario.infra;
 
-import br.com.first.funcionario.first.funcionario.domain.Funcionario;
-import br.com.first.funcionario.first.repository.funcionarioRepository;
+import br.com.funcionario.domain.Funcionario;
+import br.com.funcionario.repository.funcionarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Repository;

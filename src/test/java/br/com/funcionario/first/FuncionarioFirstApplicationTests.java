@@ -1,4 +1,4 @@
-package br.com.first.funcionario.first;
+package br.com.funcionario.first;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
