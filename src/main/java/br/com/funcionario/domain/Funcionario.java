@@ -1,5 +1,6 @@
 package br.com.funcionario.domain;
 
+import br.com.funcionario.api.FuncionarioAlteracaoRequest;
 import br.com.funcionario.api.FuncionarioRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -41,5 +42,12 @@ public class Funcionario {
         this.endereco = funcionarioRequest.getEndereco();
         this.aceitaTermos = funcionarioRequest.getAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void altera(FuncionarioAlteracaoRequest funcionarioRequest){
+        this.nomeCompleto = funcionarioRequest.getNomeCompleto();
+        this.telefone = funcionarioRequest.getTelefone();
+        this.endereco = funcionarioRequest.getEndereco();
+
     }
 }
