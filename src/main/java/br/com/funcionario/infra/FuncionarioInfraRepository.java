@@ -1,9 +1,11 @@
 package br.com.funcionario.infra;
 
 import br.com.funcionario.domain.Funcionario;
+import br.com.funcionario.handler.APIException;
 import br.com.funcionario.repository.funcionarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -36,7 +38,7 @@ public class FuncionarioInfraRepository implements funcionarioRepository {
     public Funcionario buscaFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioInfraRepository - buscaFuncionarioAtravesId");
         Funcionario funcionario = funcionarioSpringDataJPARepository.findById(idFuncionario)
-                .orElseThrow(() -> new RuntimeException("Funcionario não encontrado!"));
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Funcionário não encontrado!"));
         log.info("[finaliza] FuncionarioInfraRepository - buscaFuncionarioAtravesId");
         return funcionario;
     }
