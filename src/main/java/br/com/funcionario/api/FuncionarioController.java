@@ -1,5 +1,6 @@
 package br.com.funcionario.api;
 
+import br.com.funcionario.domain.Funcionario;
 import br.com.funcionario.service.FuncionarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -52,6 +53,9 @@ public class FuncionarioController implements FuncionarioAPI {
     @Override
     public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
         log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        log.info("[idFuncionario] {}", idFuncionario);
+        funcionarioService.patchAlteraFuncionario(idFuncionario,funcionarioAlteracaoRequest);
         log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
     }
+
 }

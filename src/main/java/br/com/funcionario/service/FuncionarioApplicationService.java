@@ -1,9 +1,6 @@
 package br.com.funcionario.service;
 
-import br.com.funcionario.api.FuncionarioDetalhadoResponse;
-import br.com.funcionario.api.FuncionarioListResponse;
-import br.com.funcionario.api.FuncionarioRequest;
-import br.com.funcionario.api.FuncionarioResponse;
+import br.com.funcionario.api.*;
 import br.com.funcionario.domain.Funcionario;
 import br.com.funcionario.infra.FuncionarioInfraRepository;
 import lombok.RequiredArgsConstructor;
@@ -50,5 +47,14 @@ public class FuncionarioApplicationService implements FuncionarioService {
         Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
         funcionarioRepository.deletaFuncionario(funcionario);
         log.info("[finaliza] FuncionarioService.deletaFuncionarioAtravezID");
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
+        funcionario.altera(funcionarioAlteracaoRequest);
+        funcionarioRepository.salva(funcionario);
+        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
     }
 }
