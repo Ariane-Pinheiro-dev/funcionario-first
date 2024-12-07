@@ -1,8 +1,9 @@
 package br.com.funcionario.api;
 
 import br.com.funcionario.domain.Funcionario;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.Value;
-
 import java.time.LocalDateTime;
 import java.util.UUID;
 
